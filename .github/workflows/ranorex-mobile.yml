@@ -114,6 +114,8 @@ jobs:
           New-Item -ItemType Directory -Force -Path $reportDir | Out-Null
 
           $testCases = @(
+              "TC01_Login_Failed",
+              "TC02_Login_Success",
               "TC01_ProductList",
               "TC02_ProductDetail",
               "TC03_AddToCart"
