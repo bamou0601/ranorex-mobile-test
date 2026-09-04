@@ -78,3 +78,75 @@ jobs:
           ForEach-Object {
               Write-Host $_.FullName
           }
+
+      - name: Check Android emulator
+        shell: powershell
+        run: |
+          $adb = "C:\Users\mo_ba\AppData\Local\Android\Sdk\platform-tools\adb.exe"
+
+          Write-Host "=== Connected Android devices ==="
+          & $adb devices
+
+          $devices = & $adb devices
+
+          if ($devices -notmatch "emulator-5554\s+device") {
+              Write-Error "emulator-5554 is not connected."
+              exit 1
+          }
+
+          Write-Host "emulator-5554 is connected."
+
+      - name: Run Ranorex mobile tests
+        shell: powershell
+        run: |
+          $testExe = Join-Path $env:GITHUB_WORKSPACE `
+            "RanorexMobileTest\bin\Debug\RanorexMobileTest.exe"
+
+          $testSuite = Join-Path $env:GITHUB_WORKSPACE `
+            "RanorexMobileTest\bin\Debug\RanorexMobileTest.rxtst"
+
+          $reportDir = Join-Path $env:GITHUB_WORKSPACE "RanorexReports"
+
+          New-Item -ItemType Directory -Force -Path $reportDir | Out-Null
+
+          $testCases = @(
+              "TC01_ProductList",
+              "TC02_ProductDetail",
+              "TC03_AddToCart"
+          )
+
+          foreach ($testCase in $testCases) {
+
+              Write-Host ""
+              Write-Host "======================================"
+              Write-Host "Running: $testCase"
+              Write-Host "======================================"
+
+              $reportFile = Join-Path $reportDir "$testCase.rxlog"
+
+              & $testExe `
+                "/ts:$testSuite" `
+                "/ep:emulator-5554" `
+                "/tc:$testCase" `
+                "/rf:$reportFile" `
+                "/ju"
+
+              if ($LASTEXITCODE -ne 0) {
+                  Write-Error "$testCase failed. ExitCode=$LASTEXITCODE"
+                  exit $LASTEXITCODE
+              }
+
+              Write-Host "$testCase completed successfully."
+          }
+
+          Write-Host ""
+          Write-Host "All Ranorex Android tests passed."
+
+      - name: Upload Ranorex reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ranorex-mobile-reports
+          path: RanorexReports/
+          if-no-files-found: warn
+
