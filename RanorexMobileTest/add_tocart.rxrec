@@ -116,6 +116,26 @@ mode="Global">
 			id="670644b2-193f-42f1-8386-199377aac956">
 			</arguments>
 		</userrecorditem>
+		<closeapprecorditem
+		enabled="True"
+		graceperiod="100ms"
+		method="KillProcess"
+		optional="False"
+		searchpropertyid="80657616-7604-4a6d-acbb-2d749df63dcf">
+			<comment>
+			</comment>
+			<bindings>
+			</bindings>
+			<info
+			id="f4764060-f210-4a41-abb0-ddf8919934dd"
+			sourcename="ItemRecorderEditor">
+				<path>
+					/mobileapp[@title='com.saucelabs.mydemoapp.android']
+				</path>
+				<robustPath>
+				</robustPath>
+			</info>
+		</closeapprecorditem>
 	</recorditems>
 	<repository
 	id="e1bb77d0-ddfd-4378-8ec8-3d9b99e75b47"

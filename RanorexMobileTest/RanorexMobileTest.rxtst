@@ -55,6 +55,10 @@
 			name="TC02_ProductDetail">
 			</testcase>
 			<testcase
+			id="451e1580-77b9-420f-963b-057fa22d0dba"
+			name="TC04_Checkout">
+			</testcase>
+			<testcase
 			id="477912b3-003e-4d7c-964f-1c2a0d5a1f78"
 			name="TC01_Login_Failed">
 			</testcase>
@@ -142,6 +146,10 @@
 						name="add_tocart">
 						</testmodule>
 					</testcase>
+					<testcase
+					id="451e1580-77b9-420f-963b-057fa22d0dba"
+					name="TC04_Checkout">
+					</testcase>
 				</testcase>
 			</testsuite>
 		</childhierarchy>
@@ -157,6 +165,9 @@
 			</testcontainer>
 			<testcontainer
 			id="1faff34f-5f35-45c1-bd39-2fc55ee140a0">
+			</testcontainer>
+			<testcontainer
+			id="451e1580-77b9-420f-963b-057fa22d0dba">
 			</testcontainer>
 			<testcontainer
 			id="477912b3-003e-4d7c-964f-1c2a0d5a1f78">

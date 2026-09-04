@@ -173,16 +173,63 @@ fLISV/chUmT/0Zp9c5QKHKF3y7McHWwAAAAASUVORK5CYII=
 			searchtimeout="30000ms">
 				/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']//container[@accessibilityid='2131361867']
 			</item>
-			<item
+			<folder
 			addcaps="container,androidelement,mobileuielement"
 			capname="container"
-			id="7de731bb-775c-4231-ae0a-bddb85afacaf"
-			name="CartButton"
-			refpath="/mobileapp[@title='com.saucelabs.mydemoapp.android']/form/androidelement/androidelement/androidelement/androidelement/container"
-			robustPath="/mobileapp[@title='com.saucelabs.mydemoapp.android']//container"
-			searchtimeout="30000ms">
-				/mobileapp[@title='com.saucelabs.mydemoapp.android']/form/androidelement//container
-			</item>
+			id="2328e120-95dd-4df0-bd22-1324b24e8d9f"
+			isrooted="True"
+			name="FragmentContainer"
+			refpath="/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']/androidelement[@accessibilityid='2131361987']/androidelement[@accessibilitylabel='android.view.ViewGroup']/container[@accessibilityid='2131362091']"
+			searchtimeout="30000ms"
+			usecache="False">
+				<item
+				addcaps="button,androidelement,mobileuielement"
+				capname="button"
+				id="70c67af1-f79f-4a86-a7b5-0cf84ae47ca3"
+				name="CartBt"
+				refimgid="e968fe60-9790-457a-af33-27a3ea9edb20"
+				refpath="/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']/androidelement[@accessibilityid='2131361987']/androidelement[@accessibilitylabel='android.view.ViewGroup']/container[@accessibilityid='2131362091']/androidelement[@accessibilitylabel='android.view.ViewGroup']/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/button[@accessibilityid='2131361941']"
+				robustPath="/mobileapp[@title='com.saucelabs.mydemoapp.android']//button[@accessibilityid='2131361941']"
+				searchtimeout="30000ms">
+					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']//androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/button[@accessibilityid='2131361941']
+				</item>
+				<item
+				addcaps="text,androidelement,mobileuielement"
+				capname="text"
+				id="923cf5cd-b486-4a37-b97a-fed09ee4fbfc"
+				name="ItemsTV"
+				refimgid="b87f8df3-a4f0-4061-bd7e-8af848cbef9f"
+				refpath="/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']/androidelement[@accessibilityid='2131361987']/androidelement[@accessibilitylabel='android.view.ViewGroup']/container[@accessibilityid='2131362091']/androidelement[@accessibilitylabel='android.view.ViewGroup']/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/container[@accessibilitylabel='android.widget.LinearLayout']/text[@accessibilityid='2131362137']"
+				robustPath="/mobileapp[@title='com.saucelabs.mydemoapp.android']//text[@accessibilityid='2131362137']"
+				searchtimeout="30000ms">
+					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/?/?/text[@accessibilityid='2131362137']
+				</item>
+				<item
+				addcaps="text,androidelement,mobileuielement"
+				capname="text"
+				id="2e3cd7b2-0d16-4eef-982a-fcd6854e6786"
+				name="TotalPriceTV"
+				refimgid="0dd2a84b-27db-43f2-8a69-6d906c8fc621"
+				refpath="/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']/androidelement[@accessibilityid='2131361987']/androidelement[@accessibilitylabel='android.view.ViewGroup']/container[@accessibilityid='2131362091']/androidelement[@accessibilitylabel='android.view.ViewGroup']/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/container[@accessibilitylabel='android.widget.LinearLayout']/text[@accessibilityid='2131362471']"
+				robustPath="/mobileapp[@title='com.saucelabs.mydemoapp.android']//text[@accessibilityid='2131362471']"
+				searchtimeout="30000ms">
+					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/?/?/text[@accessibilityid='2131362471']
+				</item>
+				<item
+				addcaps="text,androidelement,mobileuielement"
+				capname="text"
+				id="15ab32c2-b85f-4bc9-bfe2-8bb4a75c2d47"
+				name="LoginTV"
+				refimgid="6ef8125a-1631-4e88-b6a8-49188c1788d2"
+				refpath="/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']/androidelement[@accessibilityid='2131361987']/androidelement[@accessibilitylabel='android.view.ViewGroup']/container[@accessibilityid='2131362091']/androidelement[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilitylabel='android.view.ViewGroup']/text[@accessibilityid='2131362163']"
+				robustPath="/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']"
+				searchtimeout="30000ms">
+					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']//text[@accessibilityid='2131362163']
+				</item>
+				<basepath>
+					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']
+				</basepath>
+			</folder>
 			<basepath>
 				/mobileapp[@title='com.saucelabs.mydemoapp.android']
 			</basepath>

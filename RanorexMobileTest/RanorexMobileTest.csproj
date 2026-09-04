@@ -137,6 +137,18 @@
     <Compile Include="AssemblyInfo.cs">
       <id>ca9ecc91-ba7f-4b63-8685-857379958e86</id>
     </Compile>
+    <Compile Include="cart_tocheckout.cs">
+      <BoundTo>2af08a4d-df1e-4d82-960d-607fd8da69d1</BoundTo>
+      <DependentUpon>cart_tocheckout.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <id>00b96d7f-a950-46fc-af90-98e36aaf2c1c</id>
+    </Compile>
+    <Compile Include="cart_tocheckout.UserCode.cs">
+      <BoundTo>2af08a4d-df1e-4d82-960d-607fd8da69d1</BoundTo>
+      <DependentUpon>cart_tocheckout.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <id>feee5e40-61af-4890-b71f-b3fffa4e7cc2</id>
+    </Compile>
     <Compile Include="login_succes.cs">
       <BoundTo>173da655-90e0-46a1-ad4f-3a318792788a</BoundTo>
       <DependentUpon>login_succes.rxrec</DependentUpon>
@@ -203,6 +215,11 @@
     </None>
     <None Include="app.config">
       <id>bdd7accf-27f3-4a71-a000-aa44daf401d6</id>
+    </None>
+    <None Include="cart_tocheckout.rxrec">
+      <BoundTo>33398e4b-c0dc-4c28-ab4c-08790afa3879</BoundTo>
+      <id>2af08a4d-df1e-4d82-960d-607fd8da69d1</id>
+      <recordtableid>f7812963-92f0-4c26-8b61-6786e16c7a42</recordtableid>
     </None>
     <None Include="login_succes.rxrec">
       <BoundTo>33398e4b-c0dc-4c28-ab4c-08790afa3879</BoundTo>

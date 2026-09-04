@@ -210,6 +210,26 @@ mode="Mobile">
 				$ 29.99
 			</matchvalue>
 		</validationitem>
+		<closeapprecorditem
+		enabled="True"
+		graceperiod="100ms"
+		method="KillProcess"
+		optional="False"
+		searchpropertyid="968714e7-5d78-4652-8d5d-5cbb4e493361">
+			<comment>
+			</comment>
+			<bindings>
+			</bindings>
+			<info
+			id="f4764060-f210-4a41-abb0-ddf8919934dd"
+			sourcename="ItemRecorderEditor">
+				<path>
+					/mobileapp[@title='com.saucelabs.mydemoapp.android']
+				</path>
+				<robustPath>
+				</robustPath>
+			</info>
+		</closeapprecorditem>
 	</recorditems>
 	<repository
 	id="e1bb77d0-ddfd-4378-8ec8-3d9b99e75b47"

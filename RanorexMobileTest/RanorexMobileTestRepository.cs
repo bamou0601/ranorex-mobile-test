@@ -317,13 +317,13 @@ namespace RanorexMobileTest
         [RepositoryFolder("f4764060-f210-4a41-abb0-ddf8919934dd")]
         public partial class ComSaucelabsMydemoappAndroidAppFolder : RepoGenBaseFolder
         {
+            RanorexMobileTestRepositoryFolders.FragmentContainerFolder _fragmentcontainer;
             RepoItemInfo _saucelabsbackpacktitleInfo;
             RepoItemInfo _saucelabsbackpackpriceInfo;
             RepoItemInfo _saucelabsbackpackimageInfo;
             RepoItemInfo _productdetailtitleInfo;
             RepoItemInfo _productdetailpriceInfo;
             RepoItemInfo _addtocartllInfo;
-            RepoItemInfo _cartbuttonInfo;
 
             /// <summary>
             /// Creates a new ComSaucelabsMydemoappAndroid  folder.
@@ -331,13 +331,13 @@ namespace RanorexMobileTest
             public ComSaucelabsMydemoappAndroidAppFolder(RepoGenBaseFolder parentFolder) :
                     base("ComSaucelabsMydemoappAndroid", "/mobileapp[@title='com.saucelabs.mydemoapp.android']", parentFolder, 30000, null, false, "f4764060-f210-4a41-abb0-ddf8919934dd", "")
             {
+                _fragmentcontainer = new RanorexMobileTestRepositoryFolders.FragmentContainerFolder(this);
                 _saucelabsbackpacktitleInfo = new RepoItemInfo(this, "SauceLabsBackpackTitle", "form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131362333']/?/?/androidelement[@accessibilityid='2131362301']/?/?/text[@accessibilityid='2131362460']", ".//text[@accessibilityid='2131362460']", 30000, null, "857e9dd1-088d-40b2-9f10-057bdc83015c");
                 _saucelabsbackpackpriceInfo = new RepoItemInfo(this, "SauceLabsBackpackPrice", "form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131362333']/?/?/androidelement[@accessibilityid='2131362301']/?/?/text[@accessibilityid='2131362298']", ".//text[@accessibilityid='2131362298']", 30000, null, "5edeca35-1a52-4b3a-86fd-ec6acba823bf");
                 _saucelabsbackpackimageInfo = new RepoItemInfo(this, "SauceLabsBackpackImage", "form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131362333']/?/?/androidelement[@accessibilityid='2131362301']/?/?/picture[@accessibilityid='2131362300']", ".//picture[@accessibilityid='2131362300']", 30000, null, "65cec7b1-4e00-4c5d-bd95-4f5a8ab1ec14");
                 _productdetailtitleInfo = new RepoItemInfo(this, "ProductDetailTitle", "form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']//text[@accessibilityid='2131362302']", ".//text[@accessibilityid='2131362302']", 30000, null, "d7015b1c-0b6f-421c-972f-ce92235bdb64");
                 _productdetailpriceInfo = new RepoItemInfo(this, "ProductDetailPrice", "form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']//container[@accessibilityid='2131362309']/text[@accessibilityid='2131362298']", ".//text[@accessibilityid='2131362298']", 30000, null, "0ec9d3f2-272b-44ee-bcfd-e36e11770ffd");
                 _addtocartllInfo = new RepoItemInfo(this, "AddToCartLL", "form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']//container[@accessibilityid='2131361867']", ".//container[@accessibilityid='2131361867']", 30000, null, "d0dd13a5-9289-482e-8229-7f000b5292d5");
-                _cartbuttonInfo = new RepoItemInfo(this, "CartButton", "form/androidelement//container", ".//container", 30000, null, "7de731bb-775c-4231-ae0a-bddb85afacaf");
             }
 
             /// <summary>
@@ -509,26 +509,155 @@ namespace RanorexMobileTest
             }
 
             /// <summary>
-            /// The CartButton item.
+            /// The FragmentContainer folder.
             /// </summary>
-            [RepositoryItem("7de731bb-775c-4231-ae0a-bddb85afacaf")]
-            public virtual Ranorex.Container CartButton
+            [RepositoryFolder("2328e120-95dd-4df0-bd22-1324b24e8d9f")]
+            public virtual RanorexMobileTestRepositoryFolders.FragmentContainerFolder FragmentContainer
+            {
+                get { return _fragmentcontainer; }
+            }
+        }
+
+        /// <summary>
+        /// The FragmentContainerFolder folder.
+        /// </summary>
+        [RepositoryFolder("2328e120-95dd-4df0-bd22-1324b24e8d9f")]
+        public partial class FragmentContainerFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _cartbtInfo;
+            RepoItemInfo _itemstvInfo;
+            RepoItemInfo _totalpricetvInfo;
+            RepoItemInfo _logintvInfo;
+
+            /// <summary>
+            /// Creates a new FragmentContainer  folder.
+            /// </summary>
+            public FragmentContainerFolder(RepoGenBaseFolder parentFolder) :
+                    base("FragmentContainer", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']", parentFolder, 30000, null, false, "2328e120-95dd-4df0-bd22-1324b24e8d9f", "")
+            {
+                _cartbtInfo = new RepoItemInfo(this, "CartBt", ".//androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/button[@accessibilityid='2131361941']", "", 30000, null, "70c67af1-f79f-4a86-a7b5-0cf84ae47ca3");
+                _itemstvInfo = new RepoItemInfo(this, "ItemsTV", "?/?/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/?/?/text[@accessibilityid='2131362137']", "", 30000, null, "923cf5cd-b486-4a37-b97a-fed09ee4fbfc");
+                _totalpricetvInfo = new RepoItemInfo(this, "TotalPriceTV", "?/?/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/?/?/text[@accessibilityid='2131362471']", "", 30000, null, "2e3cd7b2-0d16-4eef-982a-fcd6854e6786");
+                _logintvInfo = new RepoItemInfo(this, "LoginTV", ".//text[@accessibilityid='2131362163']", "", 30000, null, "15ab32c2-b85f-4bc9-bfe2-8bb4a75c2d47");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("2328e120-95dd-4df0-bd22-1324b24e8d9f")]
+            public virtual Ranorex.Container Self
             {
                 get
                 {
-                    return _cartbuttonInfo.CreateAdapter<Ranorex.Container>(true);
+                    return _selfInfo.CreateAdapter<Ranorex.Container>(true);
                 }
             }
 
             /// <summary>
-            /// The CartButton item info.
+            /// The Self item info.
             /// </summary>
-            [RepositoryItemInfo("7de731bb-775c-4231-ae0a-bddb85afacaf")]
-            public virtual RepoItemInfo CartButtonInfo
+            [RepositoryItemInfo("2328e120-95dd-4df0-bd22-1324b24e8d9f")]
+            public virtual RepoItemInfo SelfInfo
             {
                 get
                 {
-                    return _cartbuttonInfo;
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The CartBt item.
+            /// </summary>
+            [RepositoryItem("70c67af1-f79f-4a86-a7b5-0cf84ae47ca3")]
+            public virtual Ranorex.Button CartBt
+            {
+                get
+                {
+                    return _cartbtInfo.CreateAdapter<Ranorex.Button>(true);
+                }
+            }
+
+            /// <summary>
+            /// The CartBt item info.
+            /// </summary>
+            [RepositoryItemInfo("70c67af1-f79f-4a86-a7b5-0cf84ae47ca3")]
+            public virtual RepoItemInfo CartBtInfo
+            {
+                get
+                {
+                    return _cartbtInfo;
+                }
+            }
+
+            /// <summary>
+            /// The ItemsTV item.
+            /// </summary>
+            [RepositoryItem("923cf5cd-b486-4a37-b97a-fed09ee4fbfc")]
+            public virtual Ranorex.Text ItemsTV
+            {
+                get
+                {
+                    return _itemstvInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The ItemsTV item info.
+            /// </summary>
+            [RepositoryItemInfo("923cf5cd-b486-4a37-b97a-fed09ee4fbfc")]
+            public virtual RepoItemInfo ItemsTVInfo
+            {
+                get
+                {
+                    return _itemstvInfo;
+                }
+            }
+
+            /// <summary>
+            /// The TotalPriceTV item.
+            /// </summary>
+            [RepositoryItem("2e3cd7b2-0d16-4eef-982a-fcd6854e6786")]
+            public virtual Ranorex.Text TotalPriceTV
+            {
+                get
+                {
+                    return _totalpricetvInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The TotalPriceTV item info.
+            /// </summary>
+            [RepositoryItemInfo("2e3cd7b2-0d16-4eef-982a-fcd6854e6786")]
+            public virtual RepoItemInfo TotalPriceTVInfo
+            {
+                get
+                {
+                    return _totalpricetvInfo;
+                }
+            }
+
+            /// <summary>
+            /// The LoginTV item.
+            /// </summary>
+            [RepositoryItem("15ab32c2-b85f-4bc9-bfe2-8bb4a75c2d47")]
+            public virtual Ranorex.Text LoginTV
+            {
+                get
+                {
+                    return _logintvInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The LoginTV item info.
+            /// </summary>
+            [RepositoryItemInfo("15ab32c2-b85f-4bc9-bfe2-8bb4a75c2d47")]
+            public virtual RepoItemInfo LoginTVInfo
+            {
+                get
+                {
+                    return _logintvInfo;
                 }
             }
         }
