@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modulegroupdoc>
+  <testsuiteentryhierarchy>
+    <flatlistofchildren>
+      <modulegroups
+      name="RanorexMobileTest"
+      id="ea81ad20-6752-43b4-9d98-37fccb406b6d"/>
+    </flatlistofchildren>
+    <childhierarchy>
+      <modulegroups
+      name="RanorexMobileTest"
+      id="ea81ad20-6752-43b4-9d98-37fccb406b6d"/>
+    </childhierarchy>
+  </testsuiteentryhierarchy>
+</modulegroupdoc>
