@@ -5,3 +5,9 @@ Reports/
 *.log
 .vs/
 TestResults/
+
+# Ranorex generated reports
+SingleReportPDF/
+*.rxlog
+*.rxzlog
+*.junit.xml
