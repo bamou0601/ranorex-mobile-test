@@ -99,6 +99,10 @@ namespace RanorexMobileTest
             ValidateCartCount();
             Delay.Milliseconds(0);
             
+            Report.Log(ReportLevel.Info, "Application", "Killing application containing item 'ComSaucelabsMydemoappAndroid'.", repo.ComSaucelabsMydemoappAndroid.SelfInfo, new RecordItemIndex(6));
+            Host.Current.KillApplication(repo.ComSaucelabsMydemoappAndroid.Self);
+            Delay.Milliseconds(0);
+            
         }
 
 #region Image Feature Data

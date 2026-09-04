@@ -177,7 +177,7 @@ fLISV/chUmT/0Zp9c5QKHKF3y7McHWwAAAAASUVORK5CYII=
 			addcaps="container,androidelement,mobileuielement"
 			capname="container"
 			id="7de731bb-775c-4231-ae0a-bddb85afacaf"
-			name="Cart_logo"
+			name="CartButton"
 			refpath="/mobileapp[@title='com.saucelabs.mydemoapp.android']/form/androidelement/androidelement/androidelement/androidelement/container"
 			robustPath="/mobileapp[@title='com.saucelabs.mydemoapp.android']//container"
 			searchtimeout="30000ms">

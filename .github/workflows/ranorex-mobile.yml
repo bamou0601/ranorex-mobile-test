@@ -1,0 +1,44 @@
+name: Ranorex Mobile CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  ranorex-mobile-test:
+    runs-on: [self-hosted, Windows, X64]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show environment
+        shell: powershell
+        run: |
+          Write-Host "Runner machine:"
+          hostname
+
+          Write-Host "Current directory:"
+          Get-Location
+
+          Write-Host "ADB version:"
+          & "C:\Users\mo_ba\AppData\Local\Android\Sdk\platform-tools\adb.exe" version
+
+          Write-Host "Connected Android devices:"
+          & "C:\Users\mo_ba\AppData\Local\Android\Sdk\platform-tools\adb.exe" devices
+
+      - name: Check Ranorex installation
+        shell: powershell
+        run: |
+          $ranorexBin = "C:\Program Files (x86)\Ranorex\Studio\Bin"
+
+          if (Test-Path $ranorexBin) {
+              Write-Host "Ranorex installation found:"
+              Write-Host $ranorexBin
+          }
+          else {
+              Write-Error "Ranorex installation was not found."
+              exit 1
+          }

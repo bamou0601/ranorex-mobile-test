@@ -149,18 +149,6 @@
       <UserCode>true</UserCode>
       <id>ecf3051f-e11c-46f3-95eb-2e0ea78c3f5a</id>
     </Compile>
-    <Compile Include="mydemo_1.cs">
-      <BoundTo>6913ed3c-1859-4e4c-b51e-2493c81010f8</BoundTo>
-      <DependentUpon>mydemo_1.rxrec</DependentUpon>
-      <RecorderCode>true</RecorderCode>
-      <id>f7e19155-ee71-4fec-ae83-eb50828e776a</id>
-    </Compile>
-    <Compile Include="mydemo_1.UserCode.cs">
-      <BoundTo>6913ed3c-1859-4e4c-b51e-2493c81010f8</BoundTo>
-      <DependentUpon>mydemo_1.rxrec</DependentUpon>
-      <UserCode>true</UserCode>
-      <id>afc09f6b-16c9-4c33-87d8-1bca78d64dba</id>
-    </Compile>
     <Compile Include="productdetail.cs">
       <BoundTo>ced10930-6b16-4a1e-8b40-a67aedf89e9c</BoundTo>
       <DependentUpon>productdetail.rxrec</DependentUpon>
@@ -220,11 +208,6 @@
       <BoundTo>33398e4b-c0dc-4c28-ab4c-08790afa3879</BoundTo>
       <id>173da655-90e0-46a1-ad4f-3a318792788a</id>
       <recordtableid>2425dc46-24b6-47bc-a99d-0d9b1cbbffa1</recordtableid>
-    </None>
-    <None Include="mydemo_1.rxrec">
-      <BoundTo>33398e4b-c0dc-4c28-ab4c-08790afa3879</BoundTo>
-      <id>6913ed3c-1859-4e4c-b51e-2493c81010f8</id>
-      <recordtableid>46351aaa-5466-4720-8295-974522d5f38e</recordtableid>
     </None>
     <None Include="productdetail.rxrec">
       <BoundTo>33398e4b-c0dc-4c28-ab4c-08790afa3879</BoundTo>

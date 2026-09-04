@@ -68,6 +68,24 @@
 			id="85799939-2388-4e45-817e-c16a83c74911"
 			name="TC01_ProductList">
 			</testcase>
+			<testmodule
+			id="8a337f7f-d0b4-4e8c-ba4d-aaa5f250f529"
+			name="productdetail"
+			ref="d0629e70-ee24-4613-b200-5fd205b77db5"
+			type="Recording">
+			</testmodule>
+			<testmodule
+			id="c48bc0f1-e69c-4d1c-9834-34ef536daa04"
+			name="add_tocart"
+			ref="c66264f6-64d6-4d92-b404-68d10f97c1fb"
+			type="Recording">
+			</testmodule>
+			<testmodule
+			id="cf3a88fd-94a8-4a08-a0e6-0e06fbda467a"
+			name="productlist"
+			ref="1b28652d-bc83-4a8c-b05f-cf94106e21b4"
+			type="Recording">
+			</testmodule>
 			<testcase
 			id="e617bf3e-32ad-4cb4-8c24-838148ccd514"
 			name="TC03_AddToCart">
@@ -103,14 +121,26 @@
 					<testcase
 					id="85799939-2388-4e45-817e-c16a83c74911"
 					name="TC01_ProductList">
+						<testmodule
+						id="cf3a88fd-94a8-4a08-a0e6-0e06fbda467a"
+						name="productlist">
+						</testmodule>
 					</testcase>
 					<testcase
 					id="1faff34f-5f35-45c1-bd39-2fc55ee140a0"
 					name="TC02_ProductDetail">
+						<testmodule
+						id="8a337f7f-d0b4-4e8c-ba4d-aaa5f250f529"
+						name="productdetail">
+						</testmodule>
 					</testcase>
 					<testcase
 					id="e617bf3e-32ad-4cb4-8c24-838148ccd514"
 					name="TC03_AddToCart">
+						<testmodule
+						id="c48bc0f1-e69c-4d1c-9834-34ef536daa04"
+						name="add_tocart">
+						</testmodule>
 					</testcase>
 				</testcase>
 			</testsuite>

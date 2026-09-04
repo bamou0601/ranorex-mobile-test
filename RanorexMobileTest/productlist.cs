@@ -91,6 +91,10 @@ namespace RanorexMobileTest
             Validate.AttributeEqual(repo.ComSaucelabsMydemoappAndroid.SauceLabsBackpackPriceInfo, "Text", "$ 29.99");
             Delay.Milliseconds(0);
             
+            Report.Log(ReportLevel.Info, "Application", "Killing application containing item 'ComSaucelabsMydemoappAndroid'.", repo.ComSaucelabsMydemoappAndroid.SelfInfo, new RecordItemIndex(3));
+            Host.Current.KillApplication(repo.ComSaucelabsMydemoappAndroid.Self);
+            Delay.Milliseconds(0);
+            
         }
 
 #region Image Feature Data
