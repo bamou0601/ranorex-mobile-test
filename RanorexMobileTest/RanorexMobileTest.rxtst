@@ -54,6 +54,12 @@
 			id="1faff34f-5f35-45c1-bd39-2fc55ee140a0"
 			name="TC02_ProductDetail">
 			</testcase>
+			<testmodule
+			id="324495a9-cb3b-4ee9-b939-35f664be8d85"
+			name="cart_tocheckout"
+			ref="f7812963-92f0-4c26-8b61-6786e16c7a42"
+			type="Recording">
+			</testmodule>
 			<testcase
 			id="451e1580-77b9-420f-963b-057fa22d0dba"
 			name="TC04_Checkout">
@@ -149,6 +155,10 @@
 					<testcase
 					id="451e1580-77b9-420f-963b-057fa22d0dba"
 					name="TC04_Checkout">
+						<testmodule
+						id="324495a9-cb3b-4ee9-b939-35f664be8d85"
+						name="cart_tocheckout">
+						</testmodule>
 					</testcase>
 				</testcase>
 			</testsuite>
