@@ -83,19 +83,22 @@ jobs:
         shell: powershell
         run: |
           $adb = "C:\Users\mo_ba\AppData\Local\Android\Sdk\platform-tools\adb.exe"
+          $deviceId = "emulator-5554"
 
           Write-Host "=== Connected Android devices ==="
+          & $adb devices
 
-          $devices = & $adb devices
-          $devices | ForEach-Object {
-              Write-Host $_
+          Write-Host "=== Checking $deviceId state ==="
+
+          $state = (& $adb -s $deviceId get-state 2>&1 | Out-String).Trim()
+
+          Write-Host "Device state: [$state]"
+
+          if ($LASTEXITCODE -ne 0 -or $state -ne "device") {
+              throw "Android emulator $deviceId is not ready. State=[$state]"
           }
 
-          if ($devices -notmatch "emulator-5554\s+device") {
-              throw "Android emulator emulator-5554 is not connected."
-          }
-
-          Write-Host "Android emulator emulator-5554 is ready."
+          Write-Host "Android emulator $deviceId is ready."
 
       - name: Run Ranorex mobile tests
         shell: powershell
