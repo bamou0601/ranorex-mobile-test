@@ -65,3 +65,14 @@ jobs:
           }
 
           Write-Host "Ranorex solution build completed successfully."
+
+
+      - name: Show build outputs
+        shell: powershell
+        run: |
+          Write-Host "=== Ranorex build outputs ==="
+
+          Get-ChildItem -Path ".\RanorexMobileTest" `
+            -Recurse `
+            -Include *.exe,*.rxtst |
+            Select-Object FullName
