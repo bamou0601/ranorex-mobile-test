@@ -75,4 +75,6 @@ jobs:
           Get-ChildItem -Path ".\RanorexMobileTest" `
             -Recurse `
             -Include *.exe,*.rxtst |
-            Select-Object FullName
+          ForEach-Object {
+              Write-Host $_.FullName
+          }
