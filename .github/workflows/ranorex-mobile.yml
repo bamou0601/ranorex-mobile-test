@@ -85,16 +85,17 @@ jobs:
           $adb = "C:\Users\mo_ba\AppData\Local\Android\Sdk\platform-tools\adb.exe"
 
           Write-Host "=== Connected Android devices ==="
-          & $adb devices
 
           $devices = & $adb devices
-
-          if ($devices -notmatch "emulator-5554\s+device") {
-              Write-Error "emulator-5554 is not connected."
-              exit 1
+          $devices | ForEach-Object {
+              Write-Host $_
           }
 
-          Write-Host "emulator-5554 is connected."
+          if ($devices -notmatch "emulator-5554\s+device") {
+              throw "Android emulator emulator-5554 is not connected."
+          }
+
+          Write-Host "Android emulator emulator-5554 is ready."
 
       - name: Run Ranorex mobile tests
         shell: powershell
