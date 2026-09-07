@@ -41,7 +41,14 @@ namespace RanorexMobileTest
 		     * Checkout入力用変数へ設定する。
 		     */
 		
-		    string filePath = @"..\..\TestData\checkout-data.csv";
+		    string filePath = System.IO.Path.GetFullPath(
+        		System.IO.Path.Combine(
+            		AppDomain.CurrentDomain.BaseDirectory,
+            		@"..\..\TestData\checkout-data.csv"
+        		)
+    		);
+		    
+		    Report.Info($"Checkout data file path: {filePath}");
 		    
 		    // CSVファイル存在確認
     		if (!System.IO.File.Exists(filePath))
