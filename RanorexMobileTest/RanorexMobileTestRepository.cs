@@ -318,6 +318,8 @@ namespace RanorexMobileTest
         public partial class ComSaucelabsMydemoappAndroidAppFolder : RepoGenBaseFolder
         {
             RanorexMobileTestRepositoryFolders.FragmentContainerFolder _fragmentcontainer;
+            RanorexMobileTestRepositoryFolders.ShippingAdressFolder _shippingadress;
+            RanorexMobileTestRepositoryFolders.PaymentFolder _payment;
             RepoItemInfo _saucelabsbackpacktitleInfo;
             RepoItemInfo _saucelabsbackpackpriceInfo;
             RepoItemInfo _saucelabsbackpackimageInfo;
@@ -332,6 +334,8 @@ namespace RanorexMobileTest
                     base("ComSaucelabsMydemoappAndroid", "/mobileapp[@title='com.saucelabs.mydemoapp.android']", parentFolder, 30000, null, false, "f4764060-f210-4a41-abb0-ddf8919934dd", "")
             {
                 _fragmentcontainer = new RanorexMobileTestRepositoryFolders.FragmentContainerFolder(this);
+                _shippingadress = new RanorexMobileTestRepositoryFolders.ShippingAdressFolder(this);
+                _payment = new RanorexMobileTestRepositoryFolders.PaymentFolder(this);
                 _saucelabsbackpacktitleInfo = new RepoItemInfo(this, "SauceLabsBackpackTitle", "form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131362333']/?/?/androidelement[@accessibilityid='2131362301']/?/?/text[@accessibilityid='2131362460']", ".//text[@accessibilityid='2131362460']", 30000, null, "857e9dd1-088d-40b2-9f10-057bdc83015c");
                 _saucelabsbackpackpriceInfo = new RepoItemInfo(this, "SauceLabsBackpackPrice", "form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131362333']/?/?/androidelement[@accessibilityid='2131362301']/?/?/text[@accessibilityid='2131362298']", ".//text[@accessibilityid='2131362298']", 30000, null, "5edeca35-1a52-4b3a-86fd-ec6acba823bf");
                 _saucelabsbackpackimageInfo = new RepoItemInfo(this, "SauceLabsBackpackImage", "form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131362333']/?/?/androidelement[@accessibilityid='2131362301']/?/?/picture[@accessibilityid='2131362300']", ".//picture[@accessibilityid='2131362300']", 30000, null, "65cec7b1-4e00-4c5d-bd95-4f5a8ab1ec14");
@@ -516,6 +520,24 @@ namespace RanorexMobileTest
             {
                 get { return _fragmentcontainer; }
             }
+
+            /// <summary>
+            /// The shippingAdress folder.
+            /// </summary>
+            [RepositoryFolder("5018beaa-89ba-49c3-b3f6-713a9f7ec9f2")]
+            public virtual RanorexMobileTestRepositoryFolders.ShippingAdressFolder shippingAdress
+            {
+                get { return _shippingadress; }
+            }
+
+            /// <summary>
+            /// The payment folder.
+            /// </summary>
+            [RepositoryFolder("11e1a6e9-f527-4d90-a075-b54e493efd4f")]
+            public virtual RanorexMobileTestRepositoryFolders.PaymentFolder payment
+            {
+                get { return _payment; }
+            }
         }
 
         /// <summary>
@@ -528,6 +550,11 @@ namespace RanorexMobileTest
             RepoItemInfo _itemstvInfo;
             RepoItemInfo _totalpricetvInfo;
             RepoItemInfo _logintvInfo;
+            RepoItemInfo _namerlInfo;
+            RepoItemInfo _nameetInfo;
+            RepoItemInfo _passwordetInfo;
+            RepoItemInfo _loginbtnInfo;
+            RepoItemInfo _cardnumberetInfo;
 
             /// <summary>
             /// Creates a new FragmentContainer  folder.
@@ -539,6 +566,11 @@ namespace RanorexMobileTest
                 _itemstvInfo = new RepoItemInfo(this, "ItemsTV", "?/?/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/?/?/text[@accessibilityid='2131362137']", "", 30000, null, "923cf5cd-b486-4a37-b97a-fed09ee4fbfc");
                 _totalpricetvInfo = new RepoItemInfo(this, "TotalPriceTV", "?/?/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/?/?/text[@accessibilityid='2131362471']", "", 30000, null, "2e3cd7b2-0d16-4eef-982a-fcd6854e6786");
                 _logintvInfo = new RepoItemInfo(this, "LoginTV", ".//text[@accessibilityid='2131362163']", "", 30000, null, "15ab32c2-b85f-4bc9-bfe2-8bb4a75c2d47");
+                _namerlInfo = new RepoItemInfo(this, "NameRL", ".//container[@accessibilityid='2131362236']", "", 30000, null, "cc87c795-fa14-42cb-9be0-5e6ae86fb5df");
+                _nameetInfo = new RepoItemInfo(this, "NameET", ".//container[@accessibilityid='2131362236']/text[@accessibilityid='2131362233']", "", 30000, null, "f2ed89ea-953b-4c50-bb29-ea62becafc45");
+                _passwordetInfo = new RepoItemInfo(this, "PasswordET", ".//container[@accessibilityid='2131362279']/text[@accessibilityid='2131362276']", "", 30000, null, "f3ed0fdb-27f6-431f-853d-1d3f4ee6b259");
+                _loginbtnInfo = new RepoItemInfo(this, "LoginBtn", ".//container[@accessibilityid='2131361927']/button[@accessibilityid='2131362162']", "", 30000, null, "360a0664-e748-45ac-a3dc-66e07c4079e6");
+                _cardnumberetInfo = new RepoItemInfo(this, "CardNumberET", "?/?/androidelement[@accessibilityid='2131361958']/?/?/container[@accessibilityid='2131361937']/text[@accessibilityid='2131361934']", "", 30000, null, "215631bd-38c6-48d5-aa67-a3f2e81cb039");
             }
 
             /// <summary>
@@ -658,6 +690,466 @@ namespace RanorexMobileTest
                 get
                 {
                     return _logintvInfo;
+                }
+            }
+
+            /// <summary>
+            /// The NameRL item.
+            /// </summary>
+            [RepositoryItem("cc87c795-fa14-42cb-9be0-5e6ae86fb5df")]
+            public virtual Ranorex.Container NameRL
+            {
+                get
+                {
+                    return _namerlInfo.CreateAdapter<Ranorex.Container>(true);
+                }
+            }
+
+            /// <summary>
+            /// The NameRL item info.
+            /// </summary>
+            [RepositoryItemInfo("cc87c795-fa14-42cb-9be0-5e6ae86fb5df")]
+            public virtual RepoItemInfo NameRLInfo
+            {
+                get
+                {
+                    return _namerlInfo;
+                }
+            }
+
+            /// <summary>
+            /// The NameET item.
+            /// </summary>
+            [RepositoryItem("f2ed89ea-953b-4c50-bb29-ea62becafc45")]
+            public virtual Ranorex.Text NameET
+            {
+                get
+                {
+                    return _nameetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The NameET item info.
+            /// </summary>
+            [RepositoryItemInfo("f2ed89ea-953b-4c50-bb29-ea62becafc45")]
+            public virtual RepoItemInfo NameETInfo
+            {
+                get
+                {
+                    return _nameetInfo;
+                }
+            }
+
+            /// <summary>
+            /// The PasswordET item.
+            /// </summary>
+            [RepositoryItem("f3ed0fdb-27f6-431f-853d-1d3f4ee6b259")]
+            public virtual Ranorex.Text PasswordET
+            {
+                get
+                {
+                    return _passwordetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The PasswordET item info.
+            /// </summary>
+            [RepositoryItemInfo("f3ed0fdb-27f6-431f-853d-1d3f4ee6b259")]
+            public virtual RepoItemInfo PasswordETInfo
+            {
+                get
+                {
+                    return _passwordetInfo;
+                }
+            }
+
+            /// <summary>
+            /// The LoginBtn item.
+            /// </summary>
+            [RepositoryItem("360a0664-e748-45ac-a3dc-66e07c4079e6")]
+            public virtual Ranorex.Button LoginBtn
+            {
+                get
+                {
+                    return _loginbtnInfo.CreateAdapter<Ranorex.Button>(true);
+                }
+            }
+
+            /// <summary>
+            /// The LoginBtn item info.
+            /// </summary>
+            [RepositoryItemInfo("360a0664-e748-45ac-a3dc-66e07c4079e6")]
+            public virtual RepoItemInfo LoginBtnInfo
+            {
+                get
+                {
+                    return _loginbtnInfo;
+                }
+            }
+
+            /// <summary>
+            /// The CardNumberET item.
+            /// </summary>
+            [RepositoryItem("215631bd-38c6-48d5-aa67-a3f2e81cb039")]
+            public virtual Ranorex.Text CardNumberET
+            {
+                get
+                {
+                    return _cardnumberetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The CardNumberET item info.
+            /// </summary>
+            [RepositoryItemInfo("215631bd-38c6-48d5-aa67-a3f2e81cb039")]
+            public virtual RepoItemInfo CardNumberETInfo
+            {
+                get
+                {
+                    return _cardnumberetInfo;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The ShippingAdressFolder folder.
+        /// </summary>
+        [RepositoryFolder("5018beaa-89ba-49c3-b3f6-713a9f7ec9f2")]
+        public partial class ShippingAdressFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _paymentbtnInfo;
+            RepoItemInfo _fullnameetInfo;
+            RepoItemInfo _address1etInfo;
+            RepoItemInfo _cityetInfo;
+            RepoItemInfo _zipetInfo;
+            RepoItemInfo _countryetInfo;
+
+            /// <summary>
+            /// Creates a new shippingAdress  folder.
+            /// </summary>
+            public ShippingAdressFolder(RepoGenBaseFolder parentFolder) :
+                    base("shippingAdress", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']/androidelement[@accessibilityid='2131361958']", parentFolder, 30000, null, false, "5018beaa-89ba-49c3-b3f6-713a9f7ec9f2", "")
+            {
+                _paymentbtnInfo = new RepoItemInfo(this, "PaymentBtn", ".//androidelement[@accessibilityid='2131362285']/button[@accessibilityid='2131362284']", "", 30000, null, "ea7e0e6c-7df2-4089-87aa-c461f84826da");
+                _fullnameetInfo = new RepoItemInfo(this, "FullNameET", "?/?/container[@accessibilityid='2131362097']/text[@accessibilityid='2131362094']", "", 30000, null, "c068cf38-3f78-4241-ae86-6d4a6ad3fa48");
+                _address1etInfo = new RepoItemInfo(this, "Address1ET", "?/?/container[@accessibilityid='2131361871']/text[@accessibilityid='2131361868']", "", 30000, null, "559ae654-c8bc-4557-9562-a8187629084b");
+                _cityetInfo = new RepoItemInfo(this, "CityET", ".//container[@accessibilityid='2131361970']/text[@accessibilityid='2131361967']", "", 30000, null, "2ae88ef8-c208-499b-97ea-c0346233bc9d");
+                _zipetInfo = new RepoItemInfo(this, "ZipET", ".//container[@accessibilityid='2131362527']/text[@accessibilityid='2131362524']", "", 30000, null, "2cc18922-7e7e-48a8-ab59-7eb0bd671918");
+                _countryetInfo = new RepoItemInfo(this, "CountryET", ".//container[@accessibilityid='2131361998']/text[@accessibilityid='2131361995']", "", 30000, null, "3dcce9d6-d93d-44a1-a6f8-56174f3c5dea");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("5018beaa-89ba-49c3-b3f6-713a9f7ec9f2")]
+            public virtual Ranorex.AndroidElement Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.AndroidElement>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("5018beaa-89ba-49c3-b3f6-713a9f7ec9f2")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The PaymentBtn item.
+            /// </summary>
+            [RepositoryItem("ea7e0e6c-7df2-4089-87aa-c461f84826da")]
+            public virtual Ranorex.Button PaymentBtn
+            {
+                get
+                {
+                    return _paymentbtnInfo.CreateAdapter<Ranorex.Button>(true);
+                }
+            }
+
+            /// <summary>
+            /// The PaymentBtn item info.
+            /// </summary>
+            [RepositoryItemInfo("ea7e0e6c-7df2-4089-87aa-c461f84826da")]
+            public virtual RepoItemInfo PaymentBtnInfo
+            {
+                get
+                {
+                    return _paymentbtnInfo;
+                }
+            }
+
+            /// <summary>
+            /// The FullNameET item.
+            /// </summary>
+            [RepositoryItem("c068cf38-3f78-4241-ae86-6d4a6ad3fa48")]
+            public virtual Ranorex.Text FullNameET
+            {
+                get
+                {
+                    return _fullnameetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The FullNameET item info.
+            /// </summary>
+            [RepositoryItemInfo("c068cf38-3f78-4241-ae86-6d4a6ad3fa48")]
+            public virtual RepoItemInfo FullNameETInfo
+            {
+                get
+                {
+                    return _fullnameetInfo;
+                }
+            }
+
+            /// <summary>
+            /// The Address1ET item.
+            /// </summary>
+            [RepositoryItem("559ae654-c8bc-4557-9562-a8187629084b")]
+            public virtual Ranorex.Text Address1ET
+            {
+                get
+                {
+                    return _address1etInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Address1ET item info.
+            /// </summary>
+            [RepositoryItemInfo("559ae654-c8bc-4557-9562-a8187629084b")]
+            public virtual RepoItemInfo Address1ETInfo
+            {
+                get
+                {
+                    return _address1etInfo;
+                }
+            }
+
+            /// <summary>
+            /// The CityET item.
+            /// </summary>
+            [RepositoryItem("2ae88ef8-c208-499b-97ea-c0346233bc9d")]
+            public virtual Ranorex.Text CityET
+            {
+                get
+                {
+                    return _cityetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The CityET item info.
+            /// </summary>
+            [RepositoryItemInfo("2ae88ef8-c208-499b-97ea-c0346233bc9d")]
+            public virtual RepoItemInfo CityETInfo
+            {
+                get
+                {
+                    return _cityetInfo;
+                }
+            }
+
+            /// <summary>
+            /// The ZipET item.
+            /// </summary>
+            [RepositoryItem("2cc18922-7e7e-48a8-ab59-7eb0bd671918")]
+            public virtual Ranorex.Text ZipET
+            {
+                get
+                {
+                    return _zipetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The ZipET item info.
+            /// </summary>
+            [RepositoryItemInfo("2cc18922-7e7e-48a8-ab59-7eb0bd671918")]
+            public virtual RepoItemInfo ZipETInfo
+            {
+                get
+                {
+                    return _zipetInfo;
+                }
+            }
+
+            /// <summary>
+            /// The CountryET item.
+            /// </summary>
+            [RepositoryItem("3dcce9d6-d93d-44a1-a6f8-56174f3c5dea")]
+            public virtual Ranorex.Text CountryET
+            {
+                get
+                {
+                    return _countryetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The CountryET item info.
+            /// </summary>
+            [RepositoryItemInfo("3dcce9d6-d93d-44a1-a6f8-56174f3c5dea")]
+            public virtual RepoItemInfo CountryETInfo
+            {
+                get
+                {
+                    return _countryetInfo;
+                }
+            }
+        }
+
+        /// <summary>
+        /// The PaymentFolder folder.
+        /// </summary>
+        [RepositoryFolder("11e1a6e9-f527-4d90-a075-b54e493efd4f")]
+        public partial class PaymentFolder : RepoGenBaseFolder
+        {
+            RepoItemInfo _paymentbtnInfo;
+            RepoItemInfo _nameet1Info;
+            RepoItemInfo _expirationdateetInfo;
+            RepoItemInfo _securitycodeetInfo;
+
+            /// <summary>
+            /// Creates a new payment  folder.
+            /// </summary>
+            public PaymentFolder(RepoGenBaseFolder parentFolder) :
+                    base("payment", "", parentFolder, 30000, null, false, "11e1a6e9-f527-4d90-a075-b54e493efd4f", "")
+            {
+                _paymentbtnInfo = new RepoItemInfo(this, "PaymentBtn", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131362285']/button[@accessibilityid='2131362284']", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']", 30000, null, "bd6cd1a9-f5fc-461e-a0c0-40a49fe28d90");
+                _nameet1Info = new RepoItemInfo(this, "NameET1", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131361958']/?/?/container[@accessibilityid='2131362236']/text[@accessibilityid='2131362233']", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']", 30000, null, "e77908e0-01cc-4316-8c78-12793e00e6f0");
+                _expirationdateetInfo = new RepoItemInfo(this, "ExpirationDateET", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131361958']/?/?/container[@accessibilityid='2131362068']/text[@accessibilityid='2131362065']", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']", 30000, null, "ee0b49df-634f-4239-a13b-61f94d84e85a");
+                _securitycodeetInfo = new RepoItemInfo(this, "SecurityCodeET", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131361958']/?/?/container[@accessibilityid='2131362348']/text[@accessibilityid='2131362345']", "form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']", 30000, null, "68ac4968-5ff6-4532-b141-372d7026cdf2");
+            }
+
+            /// <summary>
+            /// The Self item.
+            /// </summary>
+            [RepositoryItem("11e1a6e9-f527-4d90-a075-b54e493efd4f")]
+            public virtual Ranorex.MobileApp Self
+            {
+                get
+                {
+                    return _selfInfo.CreateAdapter<Ranorex.MobileApp>(true);
+                }
+            }
+
+            /// <summary>
+            /// The Self item info.
+            /// </summary>
+            [RepositoryItemInfo("11e1a6e9-f527-4d90-a075-b54e493efd4f")]
+            public virtual RepoItemInfo SelfInfo
+            {
+                get
+                {
+                    return _selfInfo;
+                }
+            }
+
+            /// <summary>
+            /// The PaymentBtn item.
+            /// </summary>
+            [RepositoryItem("bd6cd1a9-f5fc-461e-a0c0-40a49fe28d90")]
+            public virtual Ranorex.Button PaymentBtn
+            {
+                get
+                {
+                    return _paymentbtnInfo.CreateAdapter<Ranorex.Button>(true);
+                }
+            }
+
+            /// <summary>
+            /// The PaymentBtn item info.
+            /// </summary>
+            [RepositoryItemInfo("bd6cd1a9-f5fc-461e-a0c0-40a49fe28d90")]
+            public virtual RepoItemInfo PaymentBtnInfo
+            {
+                get
+                {
+                    return _paymentbtnInfo;
+                }
+            }
+
+            /// <summary>
+            /// The NameET1 item.
+            /// </summary>
+            [RepositoryItem("e77908e0-01cc-4316-8c78-12793e00e6f0")]
+            public virtual Ranorex.Text NameET1
+            {
+                get
+                {
+                    return _nameet1Info.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The NameET1 item info.
+            /// </summary>
+            [RepositoryItemInfo("e77908e0-01cc-4316-8c78-12793e00e6f0")]
+            public virtual RepoItemInfo NameET1Info
+            {
+                get
+                {
+                    return _nameet1Info;
+                }
+            }
+
+            /// <summary>
+            /// The ExpirationDateET item.
+            /// </summary>
+            [RepositoryItem("ee0b49df-634f-4239-a13b-61f94d84e85a")]
+            public virtual Ranorex.Text ExpirationDateET
+            {
+                get
+                {
+                    return _expirationdateetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The ExpirationDateET item info.
+            /// </summary>
+            [RepositoryItemInfo("ee0b49df-634f-4239-a13b-61f94d84e85a")]
+            public virtual RepoItemInfo ExpirationDateETInfo
+            {
+                get
+                {
+                    return _expirationdateetInfo;
+                }
+            }
+
+            /// <summary>
+            /// The SecurityCodeET item.
+            /// </summary>
+            [RepositoryItem("68ac4968-5ff6-4532-b141-372d7026cdf2")]
+            public virtual Ranorex.Text SecurityCodeET
+            {
+                get
+                {
+                    return _securitycodeetInfo.CreateAdapter<Ranorex.Text>(true);
+                }
+            }
+
+            /// <summary>
+            /// The SecurityCodeET item info.
+            /// </summary>
+            [RepositoryItemInfo("68ac4968-5ff6-4532-b141-372d7026cdf2")]
+            public virtual RepoItemInfo SecurityCodeETInfo
+            {
+                get
+                {
+                    return _securitycodeetInfo;
                 }
             }
         }

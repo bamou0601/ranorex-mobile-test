@@ -69,6 +69,12 @@
 			name="TC01_Login_Failed">
 			</testcase>
 			<testmodule
+			id="4d544503-2d85-4d74-9113-bb2c80dc1093"
+			name="checkout_toLogin"
+			ref="bd2133d3-059b-49e4-93b1-3c6611dd32a0"
+			type="Recording">
+			</testmodule>
+			<testmodule
 			id="58ee752b-2386-457c-9f04-914e4c762fd7"
 			name="login_succes"
 			ref="2425dc46-24b6-47bc-a99d-0d9b1cbbffa1"
@@ -94,6 +100,12 @@
 			id="cf3a88fd-94a8-4a08-a0e6-0e06fbda467a"
 			name="productlist"
 			ref="1b28652d-bc83-4a8c-b05f-cf94106e21b4"
+			type="Recording">
+			</testmodule>
+			<testmodule
+			id="e4495e49-cd3a-426f-b81f-752a4f83dad1"
+			name="fill_shippingaddress"
+			ref="2cabc4a7-b58b-46bf-b151-0b15aa7537d5"
 			type="Recording">
 			</testmodule>
 			<testcase
@@ -158,6 +170,14 @@
 						<testmodule
 						id="324495a9-cb3b-4ee9-b939-35f664be8d85"
 						name="cart_tocheckout">
+						</testmodule>
+						<testmodule
+						id="4d544503-2d85-4d74-9113-bb2c80dc1093"
+						name="checkout_toLogin">
+						</testmodule>
+						<testmodule
+						id="e4495e49-cd3a-426f-b81f-752a4f83dad1"
+						name="fill_shippingaddress">
 						</testmodule>
 					</testcase>
 				</testcase>

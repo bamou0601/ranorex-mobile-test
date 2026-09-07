@@ -149,6 +149,30 @@
       <UserCode>true</UserCode>
       <id>feee5e40-61af-4890-b71f-b3fffa4e7cc2</id>
     </Compile>
+    <Compile Include="checkout_toLogin.cs">
+      <BoundTo>8aa6da16-dab9-43c1-b27a-9adfa7a95e76</BoundTo>
+      <DependentUpon>checkout_toLogin.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <id>803159d7-f7a9-4281-b20d-0e9cdf76a0c3</id>
+    </Compile>
+    <Compile Include="checkout_toLogin.UserCode.cs">
+      <BoundTo>8aa6da16-dab9-43c1-b27a-9adfa7a95e76</BoundTo>
+      <DependentUpon>checkout_toLogin.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <id>f83d88ec-2531-4ff4-a4f6-6ac5170293cb</id>
+    </Compile>
+    <Compile Include="fill_shippingaddress.cs">
+      <BoundTo>47803981-0b56-4183-98e2-00c7e80f218f</BoundTo>
+      <DependentUpon>fill_shippingaddress.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <id>0c4ec657-eadc-4d04-9503-65b37603b1ab</id>
+    </Compile>
+    <Compile Include="fill_shippingaddress.UserCode.cs">
+      <BoundTo>47803981-0b56-4183-98e2-00c7e80f218f</BoundTo>
+      <DependentUpon>fill_shippingaddress.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <id>25af46d3-4911-45fa-a8a3-70febaa17989</id>
+    </Compile>
     <Compile Include="login_succes.cs">
       <BoundTo>173da655-90e0-46a1-ad4f-3a318792788a</BoundTo>
       <DependentUpon>login_succes.rxrec</DependentUpon>
@@ -221,6 +245,16 @@
       <id>2af08a4d-df1e-4d82-960d-607fd8da69d1</id>
       <recordtableid>f7812963-92f0-4c26-8b61-6786e16c7a42</recordtableid>
     </None>
+    <None Include="checkout_toLogin.rxrec">
+      <BoundTo>33398e4b-c0dc-4c28-ab4c-08790afa3879</BoundTo>
+      <id>8aa6da16-dab9-43c1-b27a-9adfa7a95e76</id>
+      <recordtableid>bd2133d3-059b-49e4-93b1-3c6611dd32a0</recordtableid>
+    </None>
+    <None Include="fill_shippingaddress.rxrec">
+      <BoundTo>33398e4b-c0dc-4c28-ab4c-08790afa3879</BoundTo>
+      <id>47803981-0b56-4183-98e2-00c7e80f218f</id>
+      <recordtableid>2cabc4a7-b58b-46bf-b151-0b15aa7537d5</recordtableid>
+    </None>
     <None Include="login_succes.rxrec">
       <BoundTo>33398e4b-c0dc-4c28-ab4c-08790afa3879</BoundTo>
       <id>173da655-90e0-46a1-ad4f-3a318792788a</id>
@@ -262,6 +296,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <id>3d11accd-dfc5-4bb6-9001-e77fbe953482</id>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestData">
+      <id>95bec6a2-9cf1-45db-aff0-8f839a7a1aa4</id>
+    </Folder>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(RanorexTargetsPath)" Condition="Exists('$(RanorexTargetsPath)')" />
