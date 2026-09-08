@@ -161,6 +161,12 @@
       <UserCode>true</UserCode>
       <id>f83d88ec-2531-4ff4-a4f6-6ac5170293cb</id>
     </Compile>
+    <Compile Include="Common\ADBhelper.cs">
+      <id>e6d43f3a-a1be-4e94-b5a2-6e2fc88b6b42</id>
+    </Compile>
+    <Compile Include="Common\TestDataHelper.cs">
+      <id>9e726c5e-7504-4f08-94aa-3ee8547d405c</id>
+    </Compile>
     <Compile Include="fill_shippingaddress.cs">
       <BoundTo>47803981-0b56-4183-98e2-00c7e80f218f</BoundTo>
       <DependentUpon>fill_shippingaddress.rxrec</DependentUpon>
@@ -300,6 +306,9 @@
   <ItemGroup>
     <Folder Include="TestData">
       <id>95bec6a2-9cf1-45db-aff0-8f839a7a1aa4</id>
+    </Folder>
+    <Folder Include="Common">
+      <id>036ec7ac-f002-45d2-b5dc-605bcdfc130f</id>
     </Folder>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

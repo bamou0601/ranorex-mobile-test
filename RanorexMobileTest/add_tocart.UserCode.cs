@@ -20,6 +20,8 @@ using Ranorex.Core;
 using Ranorex.Core.Repository;
 using Ranorex.Core.Testing;
 
+using RanorexMobileTest.Common;
+
 namespace RanorexMobileTest
 {
     public partial class add_tocart
@@ -40,35 +42,15 @@ namespace RanorexMobileTest
      		* Ranorexではボタンが独立要素として認識されないため、
      		* Android画面座標を使用して操作する。
      		*/
-     		string adbPath =
-     			@"C:\Users\mo_ba\AppData\Local\Android\Sdk\platform-tools\adb.exe";
      		
-     		string deviceId = "emulator-5554";
+     		// Add to cartボタン付近
+     		const int x = 850;
+     		const int y = 2214;
      		
-     		// Add to cartボタンの中央付近をタップ
-     		int x = 850;
-     		int y = 2214;
+     		Report.Info($"Add to cartをタップします。座標: ({x}, {y})");
      		
-     		Report.Info($"ADBでAdd to cartをタップします。座標: ({x}, {y})");
-     		
-     		var process = new System.Diagnostics.Process();
-     		
-     		process.StartInfo.FileName = adbPath;
-     		process.StartInfo.Arguments =
-     			$"-s {deviceId} shell input tap {x} {y}";
-     		
-     		process.Start();
-     		
-     		// ADB処理完了まで待機
-     		process.WaitForExit();
-     		
-     		if (process.ExitCode != 0)
-  	   		{
-     			throw new Exception(
-     				$"ADB tapに失敗しました。ExitCode={process.ExitCode}"
-     			);
-     		}
-     		
+     		ADBhelper.Tap(x, y);
+
      		Report.Info("ADBによるAdd to cartタップが完了しました。");		    
 		}
         
@@ -80,35 +62,9 @@ namespace RanorexMobileTest
 		     * カート件数「1」が表示されていることを確認する。
 		     */
 		
-		    string adbPath =
-		        @"C:\Users\mo_ba\AppData\Local\Android\Sdk\platform-tools\adb.exe";
-		
-		    string deviceId = "emulator-5554";
-		
-		    var process = new System.Diagnostics.Process();
-		
-		    process.StartInfo.FileName = adbPath;
-		    process.StartInfo.Arguments =
-		        $"-s {deviceId} shell uiautomator dump /sdcard/window.xml";
-		
-		    process.StartInfo.UseShellExecute = false;
-		    process.StartInfo.CreateNoWindow = true;
-		
-		    process.Start();
-		    process.WaitForExit();
-		
-		    // XMLをPC側へ取得
-		    process.StartInfo.Arguments =
-		        $"-s {deviceId} shell cat /sdcard/window.xml";
-		
-		    process.StartInfo.RedirectStandardOutput = true;
-		
-		    process.Start();
-		
-		    string xml = process.StandardOutput.ReadToEnd();
-		
-		    process.WaitForExit();
-		
+		    string xml = 
+		    	ADBhelper.GetUiHierarchy();
+
 		    if (!xml.Contains("text=\"1\""))
 		    {
 		        throw new Exception("カート件数1を確認できませんでした。");

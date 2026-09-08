@@ -19,6 +19,7 @@ using Ranorex;
 using Ranorex.Core;
 using Ranorex.Core.Repository;
 using Ranorex.Core.Testing;
+using RanorexMobileTest.Common;
 
 namespace RanorexMobileTest
 {
@@ -41,36 +42,20 @@ namespace RanorexMobileTest
 		     * Checkout入力用変数へ設定する。
 		     */
 		
-		    string filePath = System.IO.Path.GetFullPath(
-        		System.IO.Path.Combine(
-            		AppDomain.CurrentDomain.BaseDirectory,
-            		@"..\..\TestData\checkout-data.csv"
-        		)
-    		);
+		    string filePath = TestDataHelper.GetTestDataPath("checkout-data.csv");
 		    
 		    Report.Info($"Checkout data file path: {filePath}");
 		    
-		    // CSVファイル存在確認
-    		if (!System.IO.File.Exists(filePath))
+		    string[] values = TestDataHelper.GetRandomCsvData(filePath);
+
+		    
+		    // 必須5項目が存在することを確認
+    		if (values.Length < 5)
     		{
         		throw new Exception(
-            		$"Checkout test data file was not found: {filePath}"
+            		"Checkout test data format is invalid."
         		);
     		}
-		
-		    string[] lines = System.IO.File.ReadAllLines(filePath);
-		
-		    if (lines.Length <= 1)
-		    {
-		        throw new Exception("Checkout test data is empty.");
-		    }
-			
-		    Random random = new Random();
-		
-		    // ヘッダーを除外してランダムに1行選択
-		    int index = random.Next(1, lines.Length);
-		
-		    string[] values = lines[index].Split(',');
 			
 		    // Recording Variablesへ設定
 		    FullName = values[0];

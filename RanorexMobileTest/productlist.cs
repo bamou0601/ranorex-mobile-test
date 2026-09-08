@@ -79,8 +79,8 @@ namespace RanorexMobileTest
 
             Init();
 
-            Report.Log(ReportLevel.Info, "Application", "デバイス " + Ranorex.Core.Remoting.RemoteServiceLocator.GetCurrentDeviceName() + " で、モバイル アプリ 'com.saucelabs.mydemoapp.android' を実行します。", new RecordItemIndex(0));
-            Host.Local.RunMobileApp(Ranorex.Core.Remoting.RemoteServiceLocator.GetCurrentDeviceName(), "com.saucelabs.mydemoapp.android", true, "");
+            Report.Log(ReportLevel.Info, "Application", "デバイス 'emulator-5554' で、モバイル アプリ 'com.saucelabs.mydemoapp.android' を実行します。", new RecordItemIndex(0));
+            Host.Local.RunMobileApp("emulator-5554", "com.saucelabs.mydemoapp.android", true, "");
             Delay.Milliseconds(3500);
             
             Report.Log(ReportLevel.Info, "Validation", "Validating AttributeEqual (Text='Sauce Labs Backpack') on item 'ComSaucelabsMydemoappAndroid.SauceLabsBackpackTitle'.", repo.ComSaucelabsMydemoappAndroid.SauceLabsBackpackTitleInfo, new RecordItemIndex(1));

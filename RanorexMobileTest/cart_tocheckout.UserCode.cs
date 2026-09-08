@@ -19,6 +19,7 @@ using Ranorex;
 using Ranorex.Core;
 using Ranorex.Core.Repository;
 using Ranorex.Core.Testing;
+using RanorexMobileTest.Common;
 
 namespace RanorexMobileTest
 {
@@ -33,42 +34,22 @@ namespace RanorexMobileTest
             // Your recording specific initialization code goes here.
         }
         
-       	public void TouchAddToCart()
+        public void TouchAddToCart()
         {
 		    /*
      		* Add to cartボタンをADB経由で直接タップする。
      		* Ranorexではボタンが独立要素として認識されないため、
      		* Android画面座標を使用して操作する。
      		*/
-     		string adbPath =
-     			@"C:\Users\mo_ba\AppData\Local\Android\Sdk\platform-tools\adb.exe";
      		
-     		string deviceId = "emulator-5554";
+     		// Add to cartボタン付近
+     		const int x = 850;
+     		const int y = 2214;
      		
-     		// Add to cartボタンの中央付近をタップ
-     		int x = 850;
-     		int y = 2214;
+     		Report.Info($"Add to cartをタップします。座標: ({x}, {y})");
      		
-     		Report.Info($"ADBでAdd to cartをタップします。座標: ({x}, {y})");
-     		
-     		var process = new System.Diagnostics.Process();
-     		
-     		process.StartInfo.FileName = adbPath;
-     		process.StartInfo.Arguments =
-     			$"-s {deviceId} shell input tap {x} {y}";
-     		
-     		process.Start();
-     		
-     		// ADB処理完了まで待機
-     		process.WaitForExit();
-     		
-     		if (process.ExitCode != 0)
-  	   		{
-     			throw new Exception(
-     				$"ADB tapに失敗しました。ExitCode={process.ExitCode}"
-     			);
-     		}
-     		
+     		ADBhelper.Tap(x, y);
+
      		Report.Info("ADBによるAdd to cartタップが完了しました。");		    
 		}
                 
@@ -80,39 +61,15 @@ namespace RanorexMobileTest
      		* Spyで取得したcartRLのScreenRectangleを基準に、
      		* カート領域の中央座標をタップする。
      		*/
-     		
-     		string adbPath =
-     			 @"C:\Users\mo_ba\AppData\Local\Android\Sdk\platform-tools\adb.exe";
-     		
-     		string deviceId = "emulator-5554";
-     		
-     		
+	
      		// cartRL: ScreenRectangle = (969, 162, 79, 79)
     		int x = 1008;
     		int y = 201;
 
     		Report.Info($"ADBでカートをタップします。座標: ({x}, {y})");
     		
-    		var process = new System.Diagnostics.Process();
+    		ADBhelper.Tap(x, y);
     		
-    		process.StartInfo.FileName = adbPath;
-    		
-    		process.StartInfo.Arguments =
-        		$"-s {deviceId} shell input tap {x} {y}";
-     		
-    		process.StartInfo.UseShellExecute = false;
-		    process.StartInfo.CreateNoWindow = true;
-		
-		    process.Start();
-		    process.WaitForExit();
-		
-		    if (process.ExitCode != 0)
-		    {
-		        throw new Exception(
-		            $"カートのADBタップに失敗しました。ExitCode={process.ExitCode}"
-		        );
-		    }
-		
 		    Report.Info("ADBによるカートのタップが完了しました。");
      		
     	}

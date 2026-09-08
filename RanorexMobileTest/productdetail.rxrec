@@ -139,7 +139,6 @@ mode="Global">
 					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']//text[@accessibilityid='2131362302']
 				</path>
 				<robustPath>
-					/mobileapp[@title='com.saucelabs.mydemoapp.android']//text[@accessibilityid='2131362302']
 				</robustPath>
 			</info>
 			<matchname>
@@ -220,7 +219,6 @@ mode="Global">
 					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']//container[@accessibilityid='2131362309']/text[@accessibilityid='2131362298']
 				</path>
 				<robustPath>
-					/mobileapp[@title='com.saucelabs.mydemoapp.android']//text[@accessibilityid='2131362298']
 				</robustPath>
 			</info>
 			<matchname>

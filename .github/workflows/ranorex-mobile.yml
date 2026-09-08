@@ -100,74 +100,69 @@ jobs:
 
           Write-Host "Android emulator $deviceId is ready."
 
-      # - name: Run Ranorex mobile tests
-      #   shell: powershell
-      #   run: |
-      #     $testExe = Join-Path $env:GITHUB_WORKSPACE `
-      #       "RanorexMobileTest\bin\Debug\RanorexMobileTest.exe"
-
-      #     $testSuite = Join-Path $env:GITHUB_WORKSPACE `
-      #       "RanorexMobileTest\bin\Debug\RanorexMobileTest.rxtst"
-
-      #     $reportDir = Join-Path $env:GITHUB_WORKSPACE "RanorexReports"
-
-      #     New-Item -ItemType Directory -Force -Path $reportDir | Out-Null
-
-      #     $testCases = @(
-      #         "TC01_Login_Failed",
-      #         "TC02_Login_Success",
-      #         "TC01_ProductList",
-      #         "TC02_ProductDetail",
-      #         "TC03_AddToCart"
-      #     )
-
-      #     foreach ($testCase in $testCases) {
-
-      #         Write-Host ""
-      #         Write-Host "======================================"
-      #         Write-Host "Running: $testCase"
-      #         Write-Host "======================================"
-
-      #         $reportFile = Join-Path $reportDir "$testCase.rxlog"
-
-      #         & $testExe `
-      #           "/ts:$testSuite" `
-      #           "/ep:emulator-5554" `
-      #           "/tc:$testCase" `
-      #           "/rf:$reportFile" `
-      #           "/ju"
-
-      #         if ($LASTEXITCODE -ne 0) {
-      #             Write-Error "$testCase failed. ExitCode=$LASTEXITCODE"
-      #             exit $LASTEXITCODE
-      #         }
-
-      #         Write-Host "$testCase completed successfully."
-      #     }
-
-      #     Write-Host ""
-      #     Write-Host "All Ranorex Android tests passed."
-
       - name: Run Ranorex mobile tests
         shell: powershell
         run: |
-          $exe = ".\RanorexMobileTest\bin\Debug\RanorexMobileTest.exe"
-          $suite = ".\RanorexMobileTest\bin\Debug\RanorexMobileTest.rxtst"
+          $exe = Join-Path $env:GITHUB_WORKSPACE `
+            "RanorexMobileTest\bin\Debug\RanorexMobileTest.exe"
+          $suite = Join-Path $env:GITHUB_WORKSPACE `
+            "RanorexMobileTest\bin\Debug\RanorexMobileTest.rxtst"
+
+          $reportDir = Join-Path $env:GITHUB_WORKSPACE `
+            "RanorexReports"
+
+          $reportFile = Join-Path $reportDir `
+            "RanorexMobileTest.rxlog"
+
+          $zipReportFile = Join-Path $reportDir `
+            "RanorexMobileTest.rxzlog"
+
+          # レポート出力フォルダを作成
+          New-Item `
+            -ItemType Directory `
+            -Force `
+            -Path $reportDir | Out-Null
 
           Write-Host "======================================"
           Write-Host "Running Ranorex Android Test Suite"
           Write-Host "======================================"
 
+          Write-Host "Test executable:"
+          Write-Host $exe
+
+          Write-Host "Test suite:"
+          Write-Host $suite
+
+          Write-Host "Report directory:"
+          Write-Host $reportDir
+
           & $exe `
             /ts:$suite `
             /ep:emulator-5554 `
-            /zr `
-            /ju
+            "/rf:$reportFile" `
+            "/zr" `
+            "/zrf:$zipReportFile" `
+            "/ju"
 
-          if ($LASTEXITCODE -ne 0) {
-              throw "Ranorex Android Test Suite failed. Exit code: $LASTEXITCODE"
+          $exitCode = $LASTEXITCODE
+
+          Write-Host ""
+          Write-Host "=== Ranorex generated report files ==="
+
+          if (Test-Path $reportDir) {
+              Get-ChildItem `
+                -Path $reportDir `
+                -Recurse |
+              ForEach-Object {
+                  Write-Host $_.FullName
+              }
           }
 
+          if ($exitCode -ne 0) {
+              throw "Ranorex Android Test Suite failed. Exit code: $exitCode"
+          }
+
+          Write-Host ""
           Write-Host "All Ranorex Android tests passed."
 
       - name: Upload Ranorex reports
@@ -175,6 +170,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ranorex-mobile-reports
-          path: RanorexReports/
+          path: |
+            RanorexReports/**
           if-no-files-found: warn
+          retention-days: 14
 

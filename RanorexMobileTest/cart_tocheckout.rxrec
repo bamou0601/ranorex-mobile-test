@@ -27,7 +27,7 @@ mode="Global">
 	<recorditems>
 		<runmobileapprecorditem
 		application="com.saucelabs.mydemoapp.android"
-		devicename="Current Endpoint (emulator-5554)"
+		devicename="emulator-5554"
 		duration="3500ms"
 		enabled="True"
 		optional="False"
@@ -187,7 +187,6 @@ mode="Global">
 					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/?/?/text[@accessibilityid='2131362137']
 				</path>
 				<robustPath>
-					/mobileapp[@title='com.saucelabs.mydemoapp.android']//text[@accessibilityid='2131362137']
 				</robustPath>
 			</info>
 			<matchname>
@@ -268,7 +267,6 @@ mode="Global">
 					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131361942']/androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/?/?/text[@accessibilityid='2131362471']
 				</path>
 				<robustPath>
-					/mobileapp[@title='com.saucelabs.mydemoapp.android']//text[@accessibilityid='2131362471']
 				</robustPath>
 			</info>
 			<matchname>
@@ -364,7 +362,6 @@ mode="Global">
 					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']//androidelement[@accessibilityid='2131361921']/container[@accessibilityid='2131361922']/button[@accessibilityid='2131361941']
 				</path>
 				<robustPath>
-					/mobileapp[@title='com.saucelabs.mydemoapp.android']//button[@accessibilityid='2131361941']
 				</robustPath>
 			</info>
 		</touchrecorditem>
@@ -444,7 +441,6 @@ mode="Global">
 					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']//container[@accessibilityid='2131362091']//text[@accessibilityid='2131362163']
 				</path>
 				<robustPath>
-					/mobileapp[@title='com.saucelabs.mydemoapp.android']//text[@accessibilityid='2131362163']
 				</robustPath>
 			</info>
 			<matchname>

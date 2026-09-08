@@ -27,7 +27,7 @@ mode="Mobile">
 	<recorditems>
 		<runmobileapprecorditem
 		application="com.saucelabs.mydemoapp.android"
-		devicename="Current Endpoint (emulator-5554)"
+		devicename="emulator-5554"
 		duration="3500ms"
 		enabled="True"
 		optional="False"
@@ -114,7 +114,6 @@ mode="Mobile">
 					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131362333']/?/?/androidelement[@accessibilityid='2131362301']/?/?/text[@accessibilityid='2131362460']
 				</path>
 				<robustPath>
-					/mobileapp[@title='com.saucelabs.mydemoapp.android']//text[@accessibilityid='2131362460']
 				</robustPath>
 			</info>
 			<matchname>
@@ -200,7 +199,6 @@ mode="Mobile">
 					/mobileapp[@title='com.saucelabs.mydemoapp.android']/form[@accessibilitylabel='android.widget.FrameLayout']/androidelement[@accessibilityid='16908290']//container[@accessibilityid='2131362091']/?/?/androidelement[@accessibilityid='2131362333']/?/?/androidelement[@accessibilityid='2131362301']/?/?/text[@accessibilityid='2131362298']
 				</path>
 				<robustPath>
-					/mobileapp[@title='com.saucelabs.mydemoapp.android']//text[@accessibilityid='2131362298']
 				</robustPath>
 			</info>
 			<matchname>

@@ -27,7 +27,7 @@ mode="Global">
 	<recorditems>
 		<runmobileapprecorditem
 		application="com.saucelabs.mydemoapp.android"
-		devicename="Current Endpoint (emulator-5554)"
+		devicename="emulator-5554"
 		duration="3500ms"
 		enabled="True"
 		optional="False"

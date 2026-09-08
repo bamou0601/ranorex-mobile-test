@@ -1,0 +1,40 @@
+﻿<Properties>
+  <Array name="active" />
+  <Array name="bookmarks" />
+  <Array name="files">
+    <Element value="fill_shippingaddress.UserCode.cs" />
+    <Element value="RanorexMobileTest.rxtst" />
+    <Element value="fill_shippingaddress.rxrec" />
+    <Element value="RanorexMobileTestRepository.rxrep" />
+    <Element value="checkout_toLogin.rxrec" />
+    <Element value="cart_tocheckout.rxrec" />
+    <Element value="add_tocart.rxrec" />
+    <Element value="cart_tocheckout.UserCode.cs" />
+    <Element value="RanorexMobileTestRepository.rximg" />
+    <Element value="add_tocart.UserCode.cs" />
+    <Element value="AssemblyInfo.cs" />
+    <Element value="cart_tocheckout.cs" />
+    <Element value="productdetail.rxrec" />
+    <Element value="productlist.rxrec" />
+    <Element value="RanorexMobileTest.rxtmg" />
+    <Element value="login_succes.rxrec" />
+    <Element value="add_tocart.cs" />
+    <Element value="login_failed.cs" />
+    <Element value="login_failed.rxrec" />
+    <Element value="login_succes.cs" />
+    <Element value="login_succes.UserCode.cs" />
+  </Array>
+  <Properties name="projectSavedData">
+    <Properties name="customTool">
+      <runOnBuild value="False" />
+    </Properties>
+    <Array name="recentusercodeselections">
+      <Element value="RanorexMobileTest.fill_shippingaddress.LoadRandomCheckoutData()" />
+      <Element value="RanorexMobileTest.fill_shippingaddress.LoadRandomCheckoutData()" />
+      <Element value="RanorexMobileTest.cart_tocheckout.TouchCartButton()" />
+      <Element value="RanorexMobileTest.cart_tocheckout.TouchAddToCart()" />
+      <Element value="RanorexMobileTest.add_tocart.ValidateCartCount()" />
+      <Element value="RanorexMobileTest.add_tocart.TouchAddToCart()" />
+    </Array>
+  </Properties>
+</Properties>
